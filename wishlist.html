@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wishlists — Airbnb Clone</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/wishlist.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-brands fa-airbnb"></i>
+        <span>airbnb</span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="nav-host">Explore</a>
+        <button class="nav-globe"><i class="fa-solid fa-globe"></i></button>
+        <button class="nav-user-menu" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-bars"></i>
+          <div class="nav-avatar" id="userInitial">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wishlist-page">
+
+    <div class="wishlist-header">
+      <h1>Wishlists</h1>
+    </div>
+
+    <div class="wishlist-empty" id="wishlistEmpty" style="display:none">
+      <div class="empty-icon">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <h2>Create your first wishlist</h2>
+      <p>As you search, tap the heart icon to save your favourite places and experiences to a wishlist.</p>
+      <a href="index.html" class="empty-explore-btn">Start exploring</a>
+    </div>
+
+    <div class="wishlist-grid" id="wishlistGrid"></div>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+  <script src="js/wishlist.js"></script>
+</body>
+</html>

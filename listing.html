@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listing Detail — Airbnb Clone</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/listing.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-brands fa-airbnb"></i>
+        <span>airbnb</span>
+      </a>
+      <div class="nav-actions">
+        <a href="#" class="nav-host">Airbnb your home</a>
+        <button class="nav-globe"><i class="fa-solid fa-globe"></i></button>
+        <button class="nav-user-menu">
+          <i class="fa-solid fa-bars"></i>
+          <div class="nav-avatar"><i class="fa-solid fa-user"></i></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="listing-page" id="listingPage">
+
+    <section class="listing-title-section">
+      <h1 id="listingTitle">Loading...</h1>
+      <div class="listing-meta-row">
+        <div class="listing-rating-row">
+          <i class="fa-solid fa-star"></i>
+          <span id="listingRating"></span>
+          <span class="dot">·</span>
+          <a href="#reviews" id="listingReviewCount"></a>
+          <span class="dot">·</span>
+          <span id="listingSuper"></span>
+          <span class="dot">·</span>
+          <span id="listingLocation"></span>
+        </div>
+        <div class="listing-actions">
+          <button><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
+          <button id="wishlistBtn"><i class="fa-regular fa-heart"></i> Save</button>
+        </div>
+      </div>
+    </section>
+
+=    <section class="photo-grid" id="photoGrid">
+    </section>
+
+    <div class="listing-body">
+
+      <div class="listing-details">
+
+        <div class="host-row">
+          <div>
+            <h2 id="hostHeadline"></h2>
+            <p id="hostSubline"></p>
+          </div>
+          <div class="host-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <hr/>
+
+        <div class="highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-medal"></i>
+            <div>
+              <strong id="hostNameHighlight"></strong>
+              <p>Superhosts are experienced, highly rated hosts.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-door-open"></i>
+            <div>
+              <strong>Self check-in</strong>
+              <p>Check yourself in with the lockbox.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-calendar-xmark"></i>
+            <div>
+              <strong>Free cancellation for 48 hours</strong>
+              <p>Cancel within 48 hours for a full refund.</p>
+            </div>
+          </div>
+        </div>
+        <hr/>
+
+        <div class="description-block">
+          <p id="listingDescription"></p>
+        </div>
+        <hr/>
+
+        <div class="amenities-block">
+          <h2>What this place offers</h2>
+          <div class="amenities-grid" id="amenitiesGrid"></div>
+        </div>
+        <hr/>
+
+      </div>
+
+      <div class="booking-widget" id="bookingWidget">
+        <div class="bw-header">
+          <div class="bw-price">
+            <span id="bwPrice"></span>
+            <span class="bw-night">/ night</span>
+          </div>
+          <div class="bw-rating">
+            <i class="fa-solid fa-star"></i>
+            <span id="bwRating"></span>
+            <span id="bwReviews"></span>
+          </div>
+        </div>
+
+        <div class="bw-dates">
+          <div class="bw-date-field">
+            <label>CHECK-IN</label>
+            <input type="date" id="checkInDate"/>
+          </div>
+          <div class="bw-date-field">
+            <label>CHECK-OUT</label>
+            <input type="date" id="checkOutDate"/>
+          </div>
+        </div>
+
+        <div class="bw-guests">
+          <label>GUESTS</label>
+          <div class="guest-counter">
+            <button onclick="changeGuests(-1)">−</button>
+            <span id="guestCount">2</span>
+            <button onclick="changeGuests(1)">+</button>
+          </div>
+        </div>
+
+        <button class="bw-reserve-btn" onclick="handleReserve()">Reserve</button>
+
+        <p class="bw-note">You won't be charged yet</p>
+
+        <div class="bw-breakdown" id="bwBreakdown" style="display:none">
+          <div class="bw-row"><span id="bwNightsLabel"></span><span id="bwNightsCost"></span></div>
+          <div class="bw-row"><span>Cleaning fee</span><span>$75</span></div>
+          <div class="bw-row"><span>Service fee</span><span id="bwServiceFee"></span></div>
+          <hr/>
+          <div class="bw-row bw-total"><strong>Total</strong><strong id="bwTotal"></strong></div>
+        </div>
+      </div>
+
+    </div>
+
+    <section class="reviews-section" id="reviews">
+      <h2><i class="fa-solid fa-star"></i> <span id="reviewsHeading"></span></h2>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="js/listing.js"></script>
+</body>
+</html>

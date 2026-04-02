@@ -66,9 +66,8 @@ const LISTINGS = [
 ];
 
 let activeCategory = "all";
-let wishlist = new Set();
+let wishlist = new Set(JSON.parse(localStorage.getItem("airbnb_wishlist") || "[]"));
 
-// ===== RENDER LISTINGS =====
 function renderListings(listings) {
   const grid = document.getElementById("listingsGrid");
   if (!listings.length) {
@@ -118,10 +117,15 @@ document.querySelectorAll(".category-item").forEach(item => {
 function toggleWishlist(e, id) {
   e.stopPropagation();
   wishlist.has(id) ? wishlist.delete(id) : wishlist.add(id);
+  persistWishlist();
   const filtered = activeCategory === "all"
     ? LISTINGS
     : LISTINGS.filter(l => l.category === activeCategory);
   renderListings(filtered);
+}
+
+function persistWishlist() {
+  localStorage.setItem("airbnb_wishlist", JSON.stringify(Array.from(wishlist)));
 }
 
 window.addEventListener("scroll", () => {
@@ -133,7 +137,7 @@ window.addEventListener("scroll", () => {
 });
 
 function openListing(id) {
-  alert(`Listing detail page coming in next commit! (ID: ${id})`);
+  window.location.href = `listing.html?id=${id}`;
 }
 
 renderListings(LISTINGS);
