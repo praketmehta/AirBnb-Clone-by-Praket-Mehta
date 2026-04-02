@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airbnb — Homes, Cabins, Beaches & More</title>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <i class="fa-brands fa-airbnb"></i>
+        <span>airbnb</span>
+      </div>
+      <div class="nav-search" id="navSearch">
+        <span class="ns-item">Anywhere</span>
+        <span class="ns-divider"></span>
+        <span class="ns-item">Any week</span>
+        <span class="ns-divider"></span>
+        <span class="ns-item ns-guests">Add guests</span>
+        <button class="ns-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="nav-host">Airbnb your home</a>
+        <button class="nav-globe"><i class="fa-solid fa-globe"></i></button>
+        <button class="nav-user-menu">
+          <i class="fa-solid fa-bars"></i>
+          <div class="nav-avatar"><i class="fa-solid fa-user"></i></div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <h1>Find your next <span>stay</span></h1>
+      <div class="search-bar" id="searchBar">
+        <div class="sb-field" id="sbLocation">
+          <label>Where</label>
+          <input type="text" placeholder="Search destinations" id="locationInput"/>
+        </div>
+        <div class="sb-divider"></div>
+        <div class="sb-field" id="sbCheckIn">
+          <label>Check in</label>
+          <input type="text" placeholder="Add dates" readonly/>
+        </div>
+        <div class="sb-divider"></div>
+        <div class="sb-field" id="sbCheckOut">
+          <label>Check out</label>
+          <input type="text" placeholder="Add dates" readonly/>
+        </div>
+        <div class="sb-divider"></div>
+        <div class="sb-field sb-guests" id="sbGuests">
+          <label>Who</label>
+          <span class="guests-text">Add guests</span>
+        </div>
+        <button class="sb-search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="category-bar" id="categoryBar">
+    <div class="category-scroll">
+      <div class="category-item active" data-cat="all">
+        <div class="cat-icon">🏠</div>
+        <span>All</span>
+      </div>
+      <div class="category-item" data-cat="beachfront">
+        <div class="cat-icon">🏖️</div>
+        <span>Beachfront</span>
+      </div>
+      <div class="category-item" data-cat="cabins">
+        <div class="cat-icon">🏕️</div>
+        <span>Cabins</span>
+      </div>
+      <div class="category-item" data-cat="amazing-views">
+        <div class="cat-icon">🏔️</div>
+        <span>Amazing views</span>
+      </div>
+      <div class="category-item" data-cat="trending">
+        <div class="cat-icon">🔥</div>
+        <span>Trending</span>
+      </div>
+      <div class="category-item" data-cat="pools">
+        <div class="cat-icon">🏊</div>
+        <span>Pools</span>
+      </div>
+      <div class="category-item" data-cat="luxury">
+        <div class="cat-icon">✨</div>
+        <span>Luxury</span>
+      </div>
+      <div class="category-item" data-cat="countryside">
+        <div class="cat-icon">🌿</div>
+        <span>Countryside</span>
+      </div>
+      <div class="category-item" data-cat="tiny-homes">
+        <div class="cat-icon">🏡</div>
+        <span>Tiny homes</span>
+      </div>
+      <div class="category-item" data-cat="treehouses">
+        <div class="cat-icon">🌲</div>
+        <span>Treehouses</span>
+      </div>
+      <div class="category-item" data-cat="castles">
+        <div class="cat-icon">🏰</div>
+        <span>Castles</span>
+      </div>
+    </div>
+    <button class="cat-filter-btn">
+      <i class="fa-solid fa-sliders"></i> Filters
+    </button>
+  </div>
+
+  <main class="main-content">
+    <div class="listings-grid" id="listingsGrid">
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

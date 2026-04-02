@@ -1,2 +1,1 @@
-# AirBnb-Clone-by-Praket-Mehta
-AirBnb Clone by me
+# AirBnb Clone by Praket Mehta
